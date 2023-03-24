@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+
+    <persistence-unit name="DemoEntityManager">
+        <description>Hibernate Entity Manager Example</description>
+
+        &lt;!&ndash; The most important configuration is provider class i.e. org.hibernate.jpa.HibernatePersistenceProvider&ndash;&gt;
+        &lt;!&ndash; This is how Hibernate is hooked into our application to be used as JPA implementation&ndash;&gt;
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:global/jdbc/default</jta-data-source>
+
+        <properties>
+            <property name="hibernate.transaction.jta.platform" value="SunOne"/>
+            &lt;!&ndash; There are properties to connect to your database and driver to use&ndash;&gt;
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/fsoft_demo_hibernate"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="2020"/>
+            &lt;!&ndash; hibernate.show_sql is used to tell hibernate to print sql queries into log files or console&ndash;&gt;
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+
+        &lt;!&ndash; It is important to note that persistence.xml should be placed in the META-INF directory, as you can see from the project image&ndash;&gt;
+
+    </persistence-unit>
+
+</persistence>-->
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+    <persistence-unit name="persistence">
+        <description>Demo Hibernate Entity Manager</description>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/fsoft_demo_hibernate"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="2020"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

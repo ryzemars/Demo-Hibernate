@@ -1,0 +1,25 @@
+✱ Entity lifecycle
+    - Mỗi 1 hibernate entity đều có vòng đời: tạm thời, liên tục, tách rời, bị xóa (xem ảnh)
+        transient → persistent → detached → deleted
+
+✱ Transient
+    - Các đối tượng là transient không có quan hệ với Hibernate Session hoặc chưa được đưa vào Persistence Context
+    - It like normal basic Java Object
+
+✱ Persistent
+    - The object is communicating with a context (eg. with a Session object) → and its state is synchronized with the database when we commit the Session
+    - In this state, each object represents one row in the database table. ⇉ if we make any changes in the data of the object
+        ⤷ → hibernate will detect these changes and make changes in the database table
+
+✱ Detached
+    - For converting an object from Persistent State to Detached State, we need close the session or we have to clear its cache
+        ⇉ any changes to the data (of object) will not affect the database table
+    - detached state: session.evict(entity) //entity ở đây là đối tượng được tạo bởi class Entity
+    - from detached state → persistent state: session.merge(entity)
+
+✱ Removed
+    - this is last state of entity in hibernate.
+    - When the entity object is deleted from the database → this object is is removed state.
+    - when the entity object is in removed state: any change will not affectd to DB
+    - to make an object in removed state, call .delete() or .remove() method.
+    - eg: make an object from persistent state → remove state: session.remove(entity)

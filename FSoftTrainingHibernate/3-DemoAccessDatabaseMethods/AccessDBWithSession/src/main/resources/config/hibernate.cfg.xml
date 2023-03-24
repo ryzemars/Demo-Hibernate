@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property> <!--driver-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/fsoft_demo_hibernate?createDatabaseIfNotExist=true</property> <!--path to DB, create Schema-->
+        <property name="connection.username">root</property> <!--ten dang nhap mysql-->
+        <property name="connection.password">2020</property> <!--password dang nhap-->
+
+        <!--Auto generate table in DB-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!--Show sql query-->
+        <property name="show_sql">false</property>
+
+        <!-- format code SQL: Format code thanh nhieu dong. Nhung ma set thanh false de gop thanh 1 dong cho de doc -->
+        <property name="hibernate.format_sql">false</property>
+
+        <!--pool_size configuration-->
+        <property name="connection.pool_size">10</property>
+
+        <!-- other -->
+        <property name="hibernate.connection.characterEncoding">utf8</property>
+
+    </session-factory>
+</hibernate-configuration>

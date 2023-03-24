@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/1-DemoHibernateAnnotations/1-DemoHibernateAnnotations.iml" filepath="$PROJECT_DIR$/1-DemoHibernateAnnotations/1-DemoHibernateAnnotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2-DemoPersistenceContextAndEntityLifeCycle/2-DemoPersistenceContextAndEntityLifeCycle.iml" filepath="$PROJECT_DIR$/2-DemoPersistenceContextAndEntityLifeCycle/2-DemoPersistenceContextAndEntityLifeCycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-DemoAccessDatabaseMethods/3-DemoAccessDatabaseMethods.iml" filepath="$PROJECT_DIR$/3-DemoAccessDatabaseMethods/3-DemoAccessDatabaseMethods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-DemoAccessDatabaseMethods/AccessDBWithEntityManager/AccessDBWithEntityManager.iml" filepath="$PROJECT_DIR$/3-DemoAccessDatabaseMethods/AccessDBWithEntityManager/AccessDBWithEntityManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3-DemoAccessDatabaseMethods/AccessDBWithSession/AccessDBWithSession.iml" filepath="$PROJECT_DIR$/3-DemoAccessDatabaseMethods/AccessDBWithSession/AccessDBWithSession.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2-DemoPersistenceContextAndEntityLifeCycle/Demo/Demo.iml" filepath="$PROJECT_DIR$/2-DemoPersistenceContextAndEntityLifeCycle/Demo/Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FSoftTrainingHibernate.iml" filepath="$PROJECT_DIR$/FSoftTrainingHibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1-DemoHibernateAnnotations/HibernateBasicAnnotations/HibernateBasicAnnotations.iml" filepath="$PROJECT_DIR$/1-DemoHibernateAnnotations/HibernateBasicAnnotations/HibernateBasicAnnotations.iml" />
+    </modules>
+  </component>
+</project>

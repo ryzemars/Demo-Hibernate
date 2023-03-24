@@ -1,0 +1,17 @@
+
+✱ SessionFactory
+    - Create session, connect to database by Hibernate Configuration file.
+    - Each database has 1 session factory.
+    - Create Sesson object (by call the openSession method)
+
+✱ Session
+    - Created by SessionFactory
+    - Each Session is like 1 connection to DB
+    - in Hibernate, Session is use for save and retrieve persistent objects (persistent objects = entity)
+    - Main function: do operations (such as: Create, read, delete) for instances of mapped entity classes
+
+✱ Persistence
+    - This class contain static methods to obtain EntityManagerFactory instance.
+
+✱ Query
+    - This interface is implemented by each JPA vendor to obtain relational objects that meet the criteria.

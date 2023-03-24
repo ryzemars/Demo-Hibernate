@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="AccessDBWithEntityManager" />
+        <module name="AccessDBWithSession" />
+        <module name="Demo" />
+        <module name="HibernateBasicAnnotations" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AccessDBWithEntityManager" target="17" />
+      <module name="AccessDBWithSession" target="17" />
+      <module name="Demo" target="17" />
+      <module name="HibernateBasicAnnotations" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

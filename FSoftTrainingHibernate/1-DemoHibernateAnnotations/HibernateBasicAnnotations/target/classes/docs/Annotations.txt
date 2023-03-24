@@ -1,0 +1,30 @@
+
+✱ @Entity
+    - Dùng để đánh dấu 1 class là 1 Entity
+    - có thể set name cho bảng (name = "...")
+    - Mức độ ưu tiên khi đặt tên thấp hơn @Table (VD dùng cả 2 để đặt tên bảng thì DB sẽ được map với tên của @Table)
+        ⤷ Tuy nhiên khi sử dụng hql để truy vấn sẽ phải sử dụng tên được đặt bởi @Entity
+    - Mức độ ưu tiên khi đặt tên: @Table → @Entity → Default (tên DB giống với tên Entity)
+✱ @Table
+    - Used to change table details, some attributes (optional) are: Name, Schema, Catalogue, Enforce unique constraints, Indexes
+    - Có thể set name cho bảng ở DB (name = "...")
+✱ @Id
+    - Sử dụng để định nghĩa 1 trường là primary key
+✱ @Column
+    - Sử dụng để đặt tên cột và thiết lập constraints cho cột (Indicate detailed information of a field in Entity mapping with a column in database)
+    - Dont need to use @Column if the names of field (of Entity) and column (in DB) are the same.
+✱ @GeneratedValue
+    - Sử dụng để tự động tạo giá trị cho 1 cột bất kỳ khi được insert vào DB.
+    - Có 2 thuộc tính là strategy and generator
+    - Có 4 kiểu tăng: GenerationType.AUTO, .IDENTITY, .SEQUENCE, .TABLE. Chú ý: Các kiểu tăng id chỉ áp dụng cho cột được mark là @Id
+        - Demo IDENTITY (bất kỳ chương trình nào đều có)
+        - Demo UUID kết hợp với GenerationType.AUTO (chương trình DemoTeacherProgram)
+            ⤷ Khi truy xuất thì không cần theo thứ tự → tốc độ truy xuất nhanh, nhưng kq sẽ lẫn lộn.
+        - Demo SEQUENCE (entity Teacher)
+            @SequenceGenerator(name = "teacherGenerator", sequenceName = "serial", initialValue = 5, allocationSize = 5)
+            initialValue = 1: bắt đầu chạy từ 1 (giá trị mặc định nếu k set cũng là 1), nếu set = 5 thì sẽ bắt đầu chạy từ 5
+            allocationSize = 5: định nghĩa tăng size cho bảng serial,
+                ⤷ khi [sequence_id hiện tại + allocationSize] > [nex_val hiện tại] ⇉ next_val sẽ tự cộng thêm [allocationSize đơn vị] (VD ở đây thì next_val sẽ tự tăng thêm 5 đơn vị). //next_val chính là 1 biến biểu thị cho size của allocationSize
+        - Demo TABLE: tương tự như SEQUENCE
+            ⤷ khi [table_id hiện tại + allocationSize] > [nex_val hiện tại] ⇉ next_val sẽ tự cộng thêm [allocationSize đơn vị]
+            ⤷ Khi truy xuất thì trường id sẽ bị khóa → các transaction phải thực hiện tuần tự → hiệu năng truy xuất giảm, nhưng kq lấy ra sẽ tuần tự.

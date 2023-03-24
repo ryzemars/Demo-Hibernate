@@ -1,0 +1,49 @@
+✱ JPA là gì
+- is a Jakarta EE API specification that describes the management of relational data in enterprise Java applications.
+- JPA is a specification of ORM. On the other hand, it is a set of interfaces.
+- JPA acts as a bridge between object-oriented domain models and relational database systems.
+- Since 2019: it renamed to Jakarta Persistence. javax.persistence is use for Jakarta EE 8 and below
+
+- JPA provider/vendor: Hibernate, EclipseLink (Oracle TopLink), DataNucleus, iBATIS (MyBatis), OpenJPA...
+- In SpringBoot: Hibernate is configured as the default JPA provider
+    ⤷ → it's no longer necessary to define the the EntityManagerFactory bean unless we want to customize it.
+
+//TODO: ✱ Sự khác biệt giữa ORM, JPA, JPA Provider là gì?
+
+✱ Kiến trúc của JPA: Xem ảnh để biết kiến trúc của JPA
+⦿ EntityManagerFactory:
+    - This is a factory class of EntityManager. It creates and manages multiple EntityManager instances.
+
+    - EntityManagerFactory provides instances of EntityManager for connecting to same database.
+    - All the instances are configured to use the same setting as defined by the default implementation.
+    - Several entity manager factories can be prepared for connecting to different data stores.
+    ↳ KL: JPA EntityManager is used to access a database in a particular application.
+        ⤷ It is used to manage persistent entity instances, to find entities by their primary key identity, and to query over all entities.
+
+
+⦿ EntityManager
+    - It is an Interface, it manages the persistence operations on objects. It works like factory for Query instance.
+    - EntityManager provides API for interacting between application and database.
+    - Basic functionalities of EntityManager:
+        + Persist: create new Entity in database
+        + Merge: update an Entity in database
+        + Remove: delete an Entity from database
+
+    - One of the most important aspect of a program is connection with database.
+    - Database connection and transaction with database is considered as most expensive transaction.
+
+
+⦿ Entity
+    - Entities are the persistence objects, stores as records in the database.
+
+⦿ EntityTransaction
+    - It has one-to-one relationship with EntityManager. For each EntityManager, operations are maintained by EntityTransaction class.
+
+⦿ Persistence
+    - This class contain static methods to obtain EntityManagerFactory instance.
+
+⦿ Query
+    - This interface is implemented by each JPA vendor to obtain relational objects that meet the criteria.
+
+
+
